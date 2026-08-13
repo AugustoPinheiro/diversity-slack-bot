@@ -25,7 +25,7 @@ const getPatterns = async () => {
 const applyListeners = (patterns) => {
   for (let words of patterns) {
     const { termo, explicacao, sugestoes } = words;
-    let regexPattern = new RegExp(termo, "gi");
+    let regexPattern = new RegExp(`\\b${termo}\\b`, "gi");
     const hasSuggestion = sugestoes
       ? {
           type: "context",
